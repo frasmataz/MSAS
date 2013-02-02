@@ -72,4 +72,46 @@ box-shadow: 10px 8px 15px #000000;
 
 }
 
+#newBox
+{
+-moz-box-shadow: 10px 20px 15px #000000;
+-webkit-box-shadow: 10px 20px 15px #000000;
+box-shadow: 10px 20px 15px #000000;
+border:5px;
+background-color:#ff9C00;
+padding:0px;
+margin:10px;
+height:100px;
 
+
+
+}
+
+.left
+{
+margin:10px;
+float:left;
+width:300px;
+
+}
+
+
+.right
+{
+margin:10px;
+float:right;
+width:300px;
+
+}
+
+.top
+{
+
+float:left;
+margin:10px;
+background-color:#ffb540;
+
+
+
+
+}
