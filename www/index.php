@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 
+<?php session_start();
+		if(!empty($_SESSION))
+		{
+			header("location:home.php");
+		}
+	?>
 <html>
 	
 	<head>
@@ -9,7 +15,7 @@
 	<body>
 		<div align = "center">
 			<div align = "center">
-				<h1><a href="home.php" target="_blank"> <img src="Untitled.png"></a></h1>
+				<h1><a href="home.php"> <img src="Untitled.png"></a></h1>
 			</div>
 		
 			<!--<div align = "center">

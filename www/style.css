@@ -20,6 +20,11 @@ z-index:50;
 
 div.center { text-align: center; }
 
+p.center{
+
+font-family:"helvetica", "ariel", "verdana", sans-serif;
+}
+
 .header
 {
     height: 30px;
@@ -78,14 +83,26 @@ font-family:"helvetica", "ariel", "verdana", sans-serif;
 -moz-box-shadow: 10px 20px 15px #CCCCCC;
 -webkit-box-shadow: 10px 20px 15px #CCCCCC;
 box-shadow: 10px 20px 15px #CCCCCC;
-border:5px;
-background-color:Gainsboro;
+border:3px solid grey;
+background-color:white;
 padding:0px;
 margin:30px;
 height:auto;
 overflow:auto;
 width:500px;
 
+}
+
+.inputtext
+{
+height:100px;
+width:460px;
+resize:none;
+}
+
+.homebuttons
+{
+font-family:"helvetica", "ariel", "verdana", sans-serif;
 }
 
 .title

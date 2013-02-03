@@ -7,7 +7,7 @@
 	<body>
 		<div align = "center">
 			<div align = "center">
-				<h1><a href="secondPage.html" target="_blank"> <img src="Untitled.png"></a></h1>
+				<h1><a href="home.php"> <img src="Untitled.png"></a></h1>
 			</div>
 			<div id = "box">
 				<?php
