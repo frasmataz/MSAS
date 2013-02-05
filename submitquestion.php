@@ -3,6 +3,7 @@
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<title>MSAS - Submit a question</title>
 	</head>
 	
 	<body>

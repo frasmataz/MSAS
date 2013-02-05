@@ -3,6 +3,7 @@
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<title>MSAS - Registration</title>
 	</head>
 	<body>
 		<div align = "center">
@@ -23,6 +24,7 @@
 					}
 				}
 				?>
+				<p>Please enter the following details to register:</p>
 				<form action="checkReg.php" method="post">
 					<p>Username:<input type="text" name="username"></p>
 				

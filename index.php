@@ -10,6 +10,7 @@
 	
 	<head>
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<title>MSAS - Login</title>
 	</head>
 	
 	<body>

@@ -20,6 +20,11 @@ z-index:50;
 
 div.center { text-align: center; }
 
+p.center{
+
+font-family:"helvetica", "ariel", "verdana", sans-serif;
+}
+
 .header
 {
     height: 30px;
@@ -59,7 +64,7 @@ border-bottom-left-radius:5px;
 
 #box
 {
-font-family:"halvetica", "ariel", "verdana", "sans sarif";
+font-family:"helvetica", "ariel", "verdana", sans-serif;
 text-align: center;
 width:220px;
 padding:10px;
@@ -74,45 +79,52 @@ box-shadow: 10px 8px 15px #000000;
 
 #newBox
 {
--moz-box-shadow: 10px 20px 15px #000000;
--webkit-box-shadow: 10px 20px 15px #000000;
-box-shadow: 10px 20px 15px #000000;
-border:5px;
-background-color:#ff9C00;
+font-family:"helvetica", "ariel", "verdana", sans-serif;
+-moz-box-shadow: 10px 20px 15px #CCCCCC;
+-webkit-box-shadow: 10px 20px 15px #CCCCCC;
+box-shadow: 10px 20px 15px #CCCCCC;
+border:3px solid grey;
+background-color:white;
 padding:0px;
-margin:10px;
-height:100px;
-
-
+margin:30px;
+height:auto;
+overflow:auto;
+width:500px;
 
 }
 
-.left
+.inputtext
+{
+height:100px;
+width:460px;
+resize:none;
+}
+
+.homebuttons
+{
+font-family:"helvetica", "ariel", "verdana", sans-serif;
+}
+
+.title
 {
 margin:10px;
 float:left;
-width:300px;
+font-weight:bold;
+font-size:120%;
+}
 
+.message
+{
+margin:10px;
+float:left;
+text-align:left;
 }
 
 
-.right
+.replies
 {
 margin:10px;
 float:right;
-width:300px;
-
-}
-
-.top
-{
-
-float:left;
-margin:10px;
-background-color:#ffb540;
-
-
-
 
 }
 

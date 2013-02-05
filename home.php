@@ -10,6 +10,7 @@
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<title>MSAS - Your posts</title>
 	</head>
 	
 	<body>
@@ -23,6 +24,7 @@
 			<div align = "center">
 				<h1><a href="home.php"> <img src="Untitled.png"></a></h1>
 				<p class="homebuttons"> <a href="submitquestion.php">Submit a question</a> || <a href="logout.php">Log out</a>
+				<p class="homebuttons" style="font-weight: bold"> Existing posts: </p>
 			</div>
 
 			<?php
