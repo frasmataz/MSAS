@@ -1,8 +1,8 @@
 <?php 
 	session_start();
 	$host="localhost"; // Host name 
-	$username="msasuser"; // Mysql username 
-	$password="36Pyfr9FybZTXRQL"; // Mysql password
+	$username="root"; // Mysql username 
+	$password="copperfield"; // Mysql password
 	$encryptedPassword="";
 	$db_name="msas_schema"; // Database name 
 	$tbl_name="users"; // Table name 

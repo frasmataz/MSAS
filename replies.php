@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <?php session_start();
 	$host="localhost"; // Host name 
-	$username="msasuser"; // Mysql username 
-	$password="36Pyfr9FybZTXRQL"; // Mysql password
+	$username="root"; // Mysql username 
+	$password="copperfield"; // Mysql password
 
 	$linkcon = mysql_connect("$host", "$username", "$password")or die("cannot connect"); 
 	mysql_select_db("msas_schema", $linkcon)or die("cannot select DB1"); ?>
