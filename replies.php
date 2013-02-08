@@ -44,11 +44,9 @@
 						$getSingleQuery = sprintf('SELECT * FROM posts WHERE ID = %s', $row['Posts_ID']);
 						$singleresult=mysql_query($getSingleQuery);
 						$singlerow = mysql_fetch_array($singleresult);
-						echo '<a href="replies.php" style="text-decoration:none">';
 						echo '<div id ="newBox">';
 						echo sprintf('<p class = "title">%s</p> <p class = "replies">%s</p><br><br><br> <p class = "message">%s</p>', $singlerow['Title'], $singlerow['Datetime'], $singlerow['Message']);
-						echo '</div>';
-						echo '</a>';
+						echo "</div>";
 					}
 				}
 			}
