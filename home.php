@@ -31,7 +31,7 @@
 			<?php
 			if ($_SESSION['userType'] == "student")
 			{
-				$getPostsQuery = sprintf('SELECT * FROM posts WHERE Users_ID = %s', $_SESSION['userID']);
+				$getPostsQuery = sprintf('SELECT * FROM posts WHERE Users_ID = %s ORDER BY Datetime DESC', $_SESSION['userID']);
 				$linkresult=mysql_query($getPostsQuery);
 				
 				if (!$linkresult)
@@ -42,9 +42,6 @@
 				{
 					while($row = mysql_fetch_array($linkresult))
 					{
-						// $getSingleQuery = sprintf('SELECT * FROM posts WHERE ID = %s', $row['Posts_ID']);
-						// $singleresult=mysql_query($getSingleQuery);
-						// $singlerow = mysql_fetch_array($singleresult);
 						echo sprintf('<a href="replies.php?post=%s" style="text-decoration:none">', $row['ID']);
 						echo '<div id ="newBox">';
 						echo sprintf('<p class = "title">%s</p> <p class = "replies">%s</p><br><br><br> <p class = "message">%s</p>', $row['Title'], $row['Datetime'], $row['Message']);
@@ -66,7 +63,7 @@
 				{
 					while($row = mysql_fetch_array($linkresult))
 					{
-						echo '<a href="replies.php" style="text-decoration:none">';
+						echo sprintf('<a href="replies.php?post=%s" style="text-decoration:none">', $row['ID']);
 						echo '<div id ="newBox">';
 						echo sprintf('<p class = "title">%s</p> <p class = "replies">%s</p><br><br><br> <p class = "message">%s</p>', $row['Title'], $row['Datetime'], $row['Message']);
 						echo "</div>";

@@ -23,7 +23,7 @@
 		<div align = "center">
 			<div align = "center">
 				<h1><a href="home.php"> <img src="Untitled.png"></a></h1>
-				<p class="homebuttons"> <a href="submitreply.php">Reply to this question</a> || <a href="home.php">Back to all posts</a> || <a href="logout.php">Log out</a>
+				<p class="homebuttons"> <a href="submitreply.php?post=<?php echo $_GET['post'];?>">Reply to this question</a> || <a href="home.php">Back to all posts</a> || <a href="logout.php">Log out</a>
 				<p class="homebuttons" style="font-weight: bold"> Replies: </p>
 			</div>
 
