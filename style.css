@@ -77,7 +77,8 @@ box-shadow: 10px 8px 15px #000000;
 
 #newBox
 {
-font-family:"century gothic", "helvetica", "ariel", "verdana", sans-serif;
+/* font-family:"century gothic", "helvetica", "ariel", "verdana", sans-serif; */
+font-family: 'Roboto', sans-serif;
 -moz-box-shadow: 10px 20px 15px #CCCCCC;
 -webkit-box-shadow: 10px 20px 15px #CCCCCC;
 box-shadow: 10px 20px 15px #CCCCCC;

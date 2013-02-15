@@ -18,10 +18,10 @@
 					</p>
 					<p>Title:<br><input type="text" name="title"></p>
 					<p>Post your question:
-					<textarea class="inputtext" name="message"> </textarea></p>
+					<textarea class="inputtext" name="message"></textarea></p>
 				</div>
 
-				<input type="submit">
+				<input type="submit"><a href="home.php"><button type="button">Cancel</button></a>
 			</form>
 		</div>
 	</body>

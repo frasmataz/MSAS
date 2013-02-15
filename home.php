@@ -2,7 +2,7 @@
 <?php session_start();
 	$host="localhost"; // Host name 
 	$username="root"; // Mysql username 
-	$password="copperfield"; // Mysql password
+	$password=""; // Mysql password
 
 	$linkcon = mysql_connect("$host", "$username", "$password")or die("cannot connect"); 
 	mysql_select_db("msas_schema", $linkcon)or die("cannot select DB1"); ?>
@@ -10,6 +10,7 @@
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 		<title>MSAS - Your posts</title>
 	</head>
 	
@@ -30,7 +31,7 @@
 			<?php
 			if ($_SESSION['userType'] == "student")
 			{
-				$getPostsQuery = sprintf('SELECT * FROM users_has_posts WHERE Users_ID = %s', $_SESSION['userID']);
+				$getPostsQuery = sprintf('SELECT * FROM posts WHERE Users_ID = %s', $_SESSION['userID']);
 				$linkresult=mysql_query($getPostsQuery);
 				
 				if (!$linkresult)
@@ -41,12 +42,12 @@
 				{
 					while($row = mysql_fetch_array($linkresult))
 					{
-						$getSingleQuery = sprintf('SELECT * FROM posts WHERE ID = %s', $row['Posts_ID']);
-						$singleresult=mysql_query($getSingleQuery);
-						$singlerow = mysql_fetch_array($singleresult);
-						echo '<a href="replies.php" style="text-decoration:none">';
+						// $getSingleQuery = sprintf('SELECT * FROM posts WHERE ID = %s', $row['Posts_ID']);
+						// $singleresult=mysql_query($getSingleQuery);
+						// $singlerow = mysql_fetch_array($singleresult);
+						echo sprintf('<a href="replies.php?post=%s" style="text-decoration:none">', $row['ID']);
 						echo '<div id ="newBox">';
-						echo sprintf('<p class = "title">%s</p> <p class = "replies">%s</p><br><br><br> <p class = "message">%s</p>', $singlerow['Title'], $singlerow['Datetime'], $singlerow['Message']);
+						echo sprintf('<p class = "title">%s</p> <p class = "replies">%s</p><br><br><br> <p class = "message">%s</p>', $row['Title'], $row['Datetime'], $row['Message']);
 						echo '</div>';
 						echo '</a>';
 					}
@@ -65,9 +66,11 @@
 				{
 					while($row = mysql_fetch_array($linkresult))
 					{
+						echo '<a href="replies.php" style="text-decoration:none">';
 						echo '<div id ="newBox">';
 						echo sprintf('<p class = "title">%s</p> <p class = "replies">%s</p><br><br><br> <p class = "message">%s</p>', $row['Title'], $row['Datetime'], $row['Message']);
 						echo "</div>";
+						echo '</a>';
 					}
 				}
 			}

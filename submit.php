@@ -2,7 +2,7 @@
 	session_start();
 	$host="localhost"; // Host name 
 	$username="root"; // Mysql username 
-	$password="copperfield"; // Mysql password
+	$password=""; // Mysql password
 	$encryptedPassword="";
 	$db_name="msas_schema"; // Database name 
 	$tbl_name="users"; // Table name 
@@ -21,18 +21,9 @@
 
 	$nowFormat = date('Y-m-d H:i:s');
 	
-	$sql="INSERT INTO posts (title, message, datetime) VALUES ('$mytitle', '$mymessage', '$nowFormat')";
+	$sql= sprintf("INSERT INTO posts (title, message, datetime, Users_ID) VALUES ('%s','%s','%s','%s')", $mytitle, $mymessage, $nowFormat, $_SESSION['userID']);
 	mysql_query($sql);
 
-	$sql="SELECT * FROM posts WHERE title = '$mytitle' AND message = '$mymessage'";
-	$result = mysql_query($sql);
-	$row = mysql_fetch_array($result);
-	
-	$sql=sprintf("INSERT INTO users_has_posts VALUES(%s,%s)", $_SESSION['userID'], $row['ID']);
-	mysql_query($sql);
-
-	
-	
 	header("location:home.php");
 
 ?>

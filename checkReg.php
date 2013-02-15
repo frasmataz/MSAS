@@ -1,7 +1,7 @@
 <?php 
 	$host="localhost"; // Host name 
 	$username="root"; // Mysql username 
-	$password="copperfield"; // Mysql password
+	$password=""; // Mysql password
 	$encryptedPassword="";
 	$db_name="msas_schema"; // Database name 
 	$tbl_name="users"; // Table name 
