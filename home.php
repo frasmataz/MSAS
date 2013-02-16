@@ -22,7 +22,7 @@
 			}
 		?>
 		
-		<div>
+		<div align = "center">
 			<div align = "center">
 				<a href="home.php"> <img src="Untitled.png"></a>
 				<p class="homebuttons"> <a href="submitquestion.php">Submit a question</a> || Logged in as <?php echo $_SESSION['username']?> || <a href="logout.php">Log out</a>
@@ -47,13 +47,20 @@
 				}
 				else
 				{
-					while($row = mysql_fetch_array($linkresult))
+					if (mysql_num_rows($linkresult)==0)
 					{
-						echo sprintf('<a class = postwrap href="replies.php?post=%s">', $row['ID']);
-						echo '<div class ="post">';
-						echo sprintf('<p class = "postTitle">%s</p> <p class = "postReplies">%s</p><br><br><br><p class = "postMessage">%s</p>', $row['Title'], $row['Datetime'], $row['Message']);
-						echo '</div>';
-						echo '</a>';
+						echo('<p class = "center">No posts yet, click the link above to submit one!</p>');
+					}
+					else
+					{
+						while($row = mysql_fetch_array($linkresult))
+						{
+							echo sprintf('<a class = postwrap href="replies.php?post=%s">', $row['ID']);
+							echo '<div class ="post">';
+							echo sprintf('<p class = "postTitle">%s</p> <p class = "postReplies">%s</p><br><br><br><p class = "postMessage">%s</p>', $row['Title'], $row['Datetime'], $row['Message']);
+							echo '</div>';
+							echo '</a>';
+						}
 					}
 				}
 			?>

@@ -42,18 +42,25 @@
 					}
 					else
 					{
-						while($row = mysql_fetch_array($linkresult))
+						if (mysql_num_rows($linkresult)==0)
 						{
-							echo '<div class ="post">';
-							if ($row['IsFromAdvisor'] == 0)
+							echo('<p class = "center">No replies yet!</p>');
+						}
+						else
+						{
+							while($row = mysql_fetch_array($linkresult))
 							{
-								echo('<p class = "postTitle">Student:</p>');
-							} else if ($row['IsFromAdvisor'] == 1)
-							{
-								echo('<p class = "postTitle">Advisor:</p>');
+								echo '<div class ="post">';
+								if ($row['IsFromAdvisor'] == 0)
+								{
+									echo('<p class = "postTitle">Student:</p>');
+								} else if ($row['IsFromAdvisor'] == 1)
+								{
+									echo('<p class = "postTitle">Advisor:</p>');
+								}
+								echo sprintf('<p class = "postReplies">%s</p><br><br><br> <p class = "postMessage">%s</p>', $row['Datetime'], $row['Message']);
+								echo "</div>";
 							}
-							echo sprintf('<p class = "postReplies">%s</p><br><br><br> <p class = "postMessage">%s</p>', $row['Datetime'], $row['Message']);
-							echo "</div>";
 						}
 					}
 				}
