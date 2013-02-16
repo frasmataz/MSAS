@@ -3,14 +3,17 @@
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 		<title>MSAS - Registration</title>
 	</head>
+	
 	<body>
 		<div align = "center">
 			<div align = "center">
 				<h1><a href="home.php"> <img src="Untitled.png"></a></h1>
 			</div>
-			<div id = "box">
+			
+			<div class = "loginbox">
 				<?php
 				if (!empty($_GET))
 				{
@@ -26,11 +29,12 @@
 				?>
 				<p>Please enter the following details to register:</p>
 				<form action="checkReg.php" method="post">
-					<p>Username:<input type="text" name="username"></p>
 				
-					<p>Password:<input type="password" name="password"></p>
+					Username:<br><input type="text" name="username"><br><br>
 				
-					<p>Confirm Password:<input type="password" name="passwordConf"></p>
+					Password:<br><input type="password" name="password"><br><br>
+				
+					Confirm Password:<br><input type="password" name="passwordConf"><br><br>
 				
 					<input type="submit">
 				</form>

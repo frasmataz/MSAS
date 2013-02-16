@@ -28,9 +28,9 @@
 		session_start();
 		$row = mysql_fetch_array($result);
 		$_SESSION['loggedIn']=true;
-		$_SESSION['username']=$row[0];
-		$_SESSION['userType']=$row[2];
-		$_SESSION['userID']=$row[3];
+		$_SESSION['username']=$row['username'];
+		$_SESSION['userType']=$row['type'];
+		$_SESSION['userID']=$row['ID'];
 		header("location:home.php");		
 	}
 	else

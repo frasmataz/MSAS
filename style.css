@@ -1,70 +1,17 @@
-.mainbody
+p.pageTitle
 {
-position:absolute;
-Left:35%;
-top:20%;
-display:none;
-height:250px;
-width:500px;
-margin-top: 0;
-border:1px solid #fff;
-box-shadow:0px 2px 7px #292929;
--moz-box-shadow: 0px 2px 7px #292929;
--webkit-box-shadow: 0px 2px 7px #292929;
-border-radius:10px;
--moz-border-radius:10px;
--webkit-border-radius:10px;
-background-color:#ffffff;
-z-index:50;
+font-weight: bold;
+font-family: "roboto", "helvetica", "verdana", "ariel", sans-serif;
 }
 
-div.center { text-align: center; }
-
-p.center{
-
-font-family:"helvetica", "ariel", "verdana", sans-serif;
+p.center
+{
+font-family: "roboto", "helvetica", "verdana", "ariel", sans-serif;
 }
 
-.header
+div.loginbox
 {
-    height: 30px;
-    border-bottom: 1px solid #EEE;
-    background-color: #ffffff;
-    height: 40px;
-    width: 490px;
-    padding: 5px;
-    -webkit-border-top-left-radius: 5px;
-    -webkit-border-top-right-radius: 5px;
-    -moz-border-radius-topleft: 5px;
-    -moz-border-radius-topright: 5px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-	display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-
-
-.footer
-{
-width:500px;
-text-align: center;
-background-color: whiteSmoke;
-border-top: 1px solid #DDD;
--webkit-border-bottom-right-radius:5px;
--webkit-border-bottom-left-radius:5px;
--moz-border-radius-bottomright:5px;
--moz-border-radius-bottomleft:5px;
-border-bottom-right-radius:5px;
-border-bottom-left-radius:5px;            
-}
-
-
-
-#box
-{
-font-family:"century gothic", "helvetica", "ariel", "verdana", sans-serif;
+font-family: "roboto", "helvetica", "verdana", "ariel", sans-serif;
 text-align: center;
 width:220px;
 padding:10px;
@@ -75,10 +22,10 @@ margin:0px;
 box-shadow: 10px 8px 15px #000000;
 }
 
-#newBox
+div.post
 {
-/* font-family:"century gothic", "helvetica", "ariel", "verdana", sans-serif; */
-font-family: 'Roboto', sans-serif;
+font-family: "roboto", "helvetica", "verdana", "ariel", sans-serif;
+color:black;
 -moz-box-shadow: 10px 20px 15px #CCCCCC;
 -webkit-box-shadow: 10px 20px 15px #CCCCCC;
 box-shadow: 10px 20px 15px #CCCCCC;
@@ -89,22 +36,21 @@ margin:30px;
 height:auto;
 overflow:auto;
 width:500px;
-
 }
 
-.inputtext
+textarea.inputtext
 {
 height:100px;
 width:460px;
 resize:none;
 }
 
-.homebuttons
+p.homebuttons
 {
-font-family:"century gothic", "helvetica", "ariel", "verdana", sans-serif;
+font-family: "roboto", "helvetica", "verdana", "ariel", sans-serif;
 }
 
-.title
+p.postTitle
 {
 margin:10px;
 float:left;
@@ -112,38 +58,15 @@ font-weight:bold;
 font-size:120%;
 }
 
-.message
+p.postMessage
 {
 margin:10px;
 float:left;
 text-align:justify;
 }
 
-
-.replies
+p.postReplies
 {
 margin:10px;
 float:right;
-
-}
-
-#newBox2
-{
-border:5px;
-background-color:#ff9C00;
-padding:0px;
-height:100%;
-}
-
-a.
-{
-font-color:black;
-}
-
-#newBox3
-{
-border:5px;
-background-color:#ff9C00;
-padding:0px;
-height:50px;
 }

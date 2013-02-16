@@ -10,6 +10,7 @@
 	
 	<head>
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 		<title>MSAS - Login</title>
 	</head>
 	
@@ -18,41 +19,41 @@
 			<div align = "center">
 				<h1><a href="home.php"> <img src="Untitled.png"></a></h1>
 			</div>
-		
-			<!--<div align = "center">
-				<p>The login name is just for you to see, no one can see it. </p>
-			</div>-->
 			
-			<div id = "box">
-				<p class ="center">
+			<div class = "loginbox">
+				<p>
 				Please log in.
-				<?php
-				if (!empty($_GET))
-				{
-					if ($_GET['status']==0)
-					{
-						echo('</p> <p class = "center", style="color: red;"> Username/password not recognised, please try again.');
-					}
-					else if ($_GET['status']==1)
-					{
-						echo('</p> <p class = "center", style="color: green;"> Account successfully created.');
-					}
-				}
-				?>
-				
 				</p>
+				
+				<?php
+					if (!empty($_GET))
+					{
+						if ($_GET['status']==0)
+						{
+							echo('<p style="color: red;"> Username/password not recognised, please try again.</p>');
+						}
+						else if ($_GET['status']==1)
+						{
+							echo('<p style="color: green;"> Account successfully created.</p>');
+						}
+					}
+					else
+					{
+						echo "<br>";
+					}
+				?>
 				
 				<form action="login.php" method="post">
 				
-					<br>Username:<input type="text" name="username"></br>
+					Username:<br><input type="text" name="username"><br><br>
 				
-					<br>Password:<input type="password" name="password"></br>
+					Password:<br><input type="password" name="password"><br><br>
 				
-					<br><input type="submit">
+					<input type="submit">
 				
 				</form>
 				
-				<p class = "center"> If you do not yet have an account, please register </p>
+				<p> If you do not yet have an account, please register </p>
 				
 				<button type="button" value="LoL" onclick="location.href='register.php'" />Register</button>
 			</div>
