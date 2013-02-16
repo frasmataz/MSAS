@@ -22,10 +22,10 @@
 			}
 		?>
 		
-		<div align = "center">
+		<div>
 			<div align = "center">
-				<h1><a href="home.php"> <img src="Untitled.png"></a></h1>
-				<p class="homebuttons"> <a href="submitquestion.php">Submit a question</a> || <a href="logout.php">Log out</a>
+				<a href="home.php"> <img src="Untitled.png"></a>
+				<p class="homebuttons"> <a href="submitquestion.php">Submit a question</a> || Logged in as <?php echo $_SESSION['username']?> || <a href="logout.php">Log out</a>
 				<p class = "pageTitle"> Existing posts: </p>
 			</div>
 
@@ -49,7 +49,7 @@
 				{
 					while($row = mysql_fetch_array($linkresult))
 					{
-						echo sprintf('<a href="replies.php?post=%s" style="text-decoration:none">', $row['ID']);
+						echo sprintf('<a class = postwrap href="replies.php?post=%s">', $row['ID']);
 						echo '<div class ="post">';
 						echo sprintf('<p class = "postTitle">%s</p> <p class = "postReplies">%s</p><br><br><br><p class = "postMessage">%s</p>', $row['Title'], $row['Datetime'], $row['Message']);
 						echo '</div>';
