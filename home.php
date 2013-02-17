@@ -9,9 +9,24 @@
 	
 <html>
 	<head>
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 		<title>MSAS - Your posts</title>
+		
+		<script>
+			function deleteMessage(postID)
+			{
+				if(confirm('Are you sure you want to delete this post?'))
+				{
+					url="../deletePost.php?post="
+					window.location= url.concat(postID);
+					return false;
+				}
+			}
+		</script>
 	</head>
 	
 	<body>
@@ -21,7 +36,7 @@
 				header("location:index.php");
 			}
 		?>
-		
+
 		<div align = "center">
 			<div align = "center">
 				<a href="home.php"> <img src="Untitled.png"></a>
@@ -55,11 +70,10 @@
 					{
 						while($row = mysql_fetch_array($linkresult))
 						{
-							echo sprintf('<a class = postwrap href="replies.php?post=%s">', $row['ID']);
 							echo '<div class ="post">';
-							echo sprintf('<p class = "postTitle">%s</p> <p class = "postReplies">%s</p><br><br><br><p class = "postMessage">%s</p>', $row['Title'], $row['Datetime'], $row['Message']);
+							echo sprintf('<a class = postwrap href="replies.php?post=%s">', $row['ID']);
+							echo sprintf('<p class = "postTitle">%s</p></a><div class=delete><img class=delete src="delete.png" onClick="deleteMessage(%s)"></div><p class = "postReplies">%s</p><br><br><p class = "postMessage">%s</p>', $row['Title'], $row['ID'], $row['Datetime'], $row['Message']);
 							echo '</div>';
-							echo '</a>';
 						}
 					}
 				}
