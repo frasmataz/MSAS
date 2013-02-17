@@ -73,6 +73,8 @@ font-family: "roboto", "helvetica", "verdana", "ariel", sans-serif;
 p.postTitle
 {
 margin:7px;
+width:55%;
+text-align:left;
 float:left;
 font-weight:bold;
 font-size:120%;

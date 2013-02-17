@@ -9,9 +9,6 @@
 	
 <html>
 	<head>
-		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
-		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-		<script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 		<title>MSAS - Your posts</title>
@@ -71,8 +68,7 @@
 						while($row = mysql_fetch_array($linkresult))
 						{
 							echo '<div class ="post">';
-							echo sprintf('<a class = postwrap href="replies.php?post=%s">', $row['ID']);
-							echo sprintf('<p class = "postTitle">%s</p></a><div class=delete><img class=delete src="delete.png" onClick="deleteMessage(%s)"></div><p class = "postReplies">%s</p><br><br><p class = "postMessage">%s</p>', $row['Title'], $row['ID'], $row['Datetime'], $row['Message']);
+							echo sprintf('<div class=delete><img class=delete src="delete.png" onClick="deleteMessage(%s)"></div><a class = postwrap href="replies.php?post=%s"><p class = "postTitle">%s</p></a><p class = "postReplies">%s</p><br><br><p class = "postMessage">%s</p>', $row['ID'],  $row['ID'], $row['Title'],$row['Datetime'], $row['Message']);
 							echo '</div>';
 						}
 					}
