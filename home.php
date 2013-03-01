@@ -18,7 +18,7 @@
 			{
 				if(confirm('Are you sure you want to delete this post?'))
 				{
-					url="../deletePost.php?post="
+					url="deletePost.php?post="
 					window.location= url.concat(postID);
 					return false;
 				}
