@@ -24,6 +24,15 @@
 				}
 			}
 		</script>
+		
+		<script src="jquery-1.9.1.min.js" type="text/javascript"></script>
+		<script src="jquery.timeago.js" type="text/javascript"></script>
+		
+		<script type="text/javascript">
+			jQuery(document).ready(function() {
+				jQuery("abbr.timeago").timeago();
+			});
+		</script>
 	</head>
 	
 	<body>
@@ -68,7 +77,28 @@
 						while($row = mysql_fetch_array($linkresult))
 						{
 							echo '<div class ="post">';
-							echo sprintf('<div class=delete><img class=delete src="delete.png" onClick="deleteMessage(%s)"></div><a class = postwrap href="replies.php?post=%s"><p class = "postTitle">%s</p></a><p class = "postReplies">%s</p><br><br><p class = "postMessage">%s</p>', $row['ID'],  $row['ID'], $row['Title'],$row['Datetime'], $row['Message']);
+							echo sprintf(	'<div class=delete>
+												<img class=delete src="delete.png" onClick="deleteMessage(%s)">
+											</div>
+											
+											<a class = postwrap href="replies.php?post=%s">
+												<p class = "postTitle">%s</p>
+											</a>
+											
+											<p id = post%s class = "postReplies"></p>
+											<br>
+											<br>
+											<p class = "postMessage">%s</p>
+											
+											<script>document.getElementById("post%s").textContent = jQuery.timeago("%s");</script>',
+											
+											$row['ID'],  
+											$row['ID'], 
+											$row['Title'], 
+											$row['ID'],
+											$row['Message'],
+											$row['ID'],
+											$row['Datetime']);
 							echo '</div>';
 						}
 					}
