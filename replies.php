@@ -12,6 +12,27 @@
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 		<title>MSAS - Replies</title>
+				
+		<script>
+			function deleteMessage(postID)
+			{
+				if(confirm('Are you sure you want to delete this post?'))
+				{
+					url="deletePost.php?post="
+					window.location= url.concat(postID);
+					return false;
+				}
+			}
+		</script>
+		
+		<script src="jquery-1.9.1.min.js" type="text/javascript"></script>
+		<script src="jquery.timeago.js" type="text/javascript"></script>
+		
+		<script type="text/javascript">
+			jQuery(document).ready(function() {
+				jQuery("abbr.timeago").timeago();
+			});
+		</script>
 	</head>
 	
 	<body>
@@ -58,7 +79,18 @@
 								{
 									echo('<p class = "postTitle">Advisor:</p>');
 								}
-								echo sprintf('<p class = "postReplies">%s</p><br><br><br> <p class = "postMessage">%s</p>', $row['Datetime'], $row['Message']);
+								echo sprintf(	'<p id = post%s class = "postReplies"></p>
+												<br>
+												<br>
+												<br> 
+												<p class = "postMessage">%s</p>
+												
+												<script>document.getElementById("post%s").textContent = jQuery.timeago("%s");</script>',
+											
+												$row['ID'], 
+												$row['Message'],
+												$row['ID'], 
+												$row['Datetime']);
 								echo "</div>";
 							}
 						}
